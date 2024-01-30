@@ -5,11 +5,10 @@
 
 Install Python, the PyCryptodome library, and ImageMagick.
 
-### Ubuntu 22.04 / Debian 12
+### Ubuntu 22.04 / Debian 12 / WSL
 
 ```
-sudo apt install python3 python3-pip imagemagick
-pip3 install --user pycryptodome
+sudo apt install python3 python3-pip imagemagick pycryptodome
 ```
 
 ### Arch Linux
