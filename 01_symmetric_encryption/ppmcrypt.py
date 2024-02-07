@@ -60,10 +60,12 @@ class PPMImage:
               mode of operation
         """
         if mode.lower() == 'ecb':
-            # --------- add your code here --------
-            raise NotImplementedError(f'mode of operation {mode} not implemented')
-            # ciphertext = ???
-            # ----- end add your code here --------
+            # 1. create an AES object in ECB mode
+            aes = AES.new(key, AES.MODE_ECB)
+            # 2. pad the plaintext to a multiple of 16 bytes
+            padded_plaintext = pad(self.data, 16)
+            # 3. encrypt the padded plaintext
+            ciphertext = aes.encrypt(padded_plaintext)
             # replace the image data with the ciphertext
             self.data = bytearray(ciphertext)
             # add a comment that we use ECB mode
@@ -145,10 +147,12 @@ class PPMImage:
         mode = find_property_in_comments('mode')
 
         if mode.lower() == 'ecb':
-            # --------- add your code here --------
-            raise NotImplementedError(f'mode of operation {mode} not implemented')
-            # plaintext = ???
-            # ----- end add your code here --------
+            # 1. create an AES object in ECB mode
+            aes = AES.new(key, AES.MODE_ECB)
+            # 2. decrypt the ciphertext
+            padded_plaintext = aes.decrypt(self.data)
+            # 3. remove the padding to obtain the original plaintext
+            plaintext = unpad(padded_plaintext, 16)
             # replace the image data with the plaintext
             self.data = bytearray(plaintext)
             # remove the comments where we stored the additional data
