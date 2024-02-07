@@ -11,6 +11,12 @@ Install Python, the PyCryptodome library, and ImageMagick.
 sudo apt install python3 python3-pip imagemagick python3-pycryptodome
 ```
 
+If the above did not work and module `Crypto` cannot be found, you should try the alternative below:
+
+```
+pip3 install pycryptodome
+```
+
 ### Arch Linux
 
 ```
