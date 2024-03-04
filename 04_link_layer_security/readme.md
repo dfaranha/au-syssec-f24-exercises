@@ -61,19 +61,19 @@ In VirtualBox, you have to change the Network Settings such that my Network Adap
 
 We will abstract the Virtual Machine as a hostile node in a wireless network. Although the scenarios are obviously not the same, it should serve the illustration purposes we need here.
 
-1. After the settings are changed, run Wireshark inside the Virtual Machine. You should be able to start a Capture session by clicking directly on the Shark symbol, and- all traffic from the host should become immediately visible.
+1. After the settings are changed, run Wireshark inside the Virtual Machine. You should be able to start a Capture session by clicking directly on the Shark symbol, and all traffic should become immediately visible. Depending on how the network interface driver is [implemented](https://www.virtualbox.org/manual/ch06.html#network_bridged), you might see traffic from the host as well.
 
 2. We can perform more directed sniffing by restricting to a hostname. The _Options_ item under the _Capture_ menu accepts a capture filter that allows one to specify fine-grained traffic capturing rules.
 To show how that works, the router runs an HTTP server running in the same network on every IP in the range `192.168.1.2--79` or `192.168.2.2--79`, depending on your network.
 Pick one IP address in the range randomly and start a new capture with `host 192.168.X.Y` as the capture filter (replace `X` and `Y` with the actual address).
 
-3. Now access the IP address on the host machine by typing `http://192.168.X.Y/` in your browser. Since the VM uses a bridged interface, you should be able to see the plaintext HTTP traffic in Wireshark.
+3. Now access the IP address on the VM machine by typing `http://192.168.X.Y/` in your browser, and you should be able to see the plaintext HTTP traffic in Wireshark. If your VM is able to capture traffic from the host, accessing the website from the host will also show traffic in the VM.
 
 ## Exercise 3: ARP Spoofing
 
 We will use a classical ARP Spoofing attack to redirect traffic from a host in the local network to a malicious machine. Traffic redirection is a typical lower-level intermediate step in a higher-level attack such as man-in-the-middle at the network/transport layer. We will play with those in the next weeks, so today we will just focus on the link layer.
 
-1. Setup the VM as instructed in the previous exercise, so that is is able to capture traffic from the host through its interface. Notice that this does not allow the VM to capture traffic to/from other machines connected in the same local wireless network.
+1. Setup the VM as instructed in the previous exercise. Notice that this does not allow the VM to capture traffic to/from other machines connected in the same local wireless network.
 
 2. Connect a mobile device to the same wireless network (`SYSSEC` or `NETSEC`) you have your host machine connected. Take note of its IP address and the server you used previously and start again a Wireshark capture within the VM targeting the IP address for the mobile device.
 
