@@ -87,7 +87,7 @@ $ sudo arpspoof -i <interface> -t <victim> <server>
 Or in Windows:
 
 ```
-$ arpspoof.exe --oneway <victim> <server>
+$ arpspoof.exe --oneway <server> <victim>
 ```
 
 5. Now generate traffic from the mobile device by logging in with any username/password combination. You should suddenly see the traffic directed to your mobile in Wireshark.
