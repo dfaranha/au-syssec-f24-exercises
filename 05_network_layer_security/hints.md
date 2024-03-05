@@ -1,4 +1,4 @@
-This file contains hints for macOS.
+This file contains hints for macOS and Windows.
 
 ## Exercise 2: Restoring Access
 
@@ -8,6 +8,8 @@ To forward traffic on macOS:
 sudo sysctl -w net.inet.ip.forwarding=1
 sudo sysctl -w net.inet.ip.redirect=0
 ```
+
+The mitmproxy [website](https://docs.mitmproxy.org/stable/howto-transparent/) has some hints to configure routing on Windows. You should also take the opportunity to disable the firewall.
 
 ## Exercise 3: Configure Firewall
 

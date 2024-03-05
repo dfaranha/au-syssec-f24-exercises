@@ -93,7 +93,19 @@ $ mitmproxy --mode transparent --showhost
 If everything is working correctly, you should try again to access the Web server `http://192.168.3.X/` in your mobile device and start seeing captured flows in the `mitmproxy` window.
 In this window, you can select a flow by using the arrows and pressing ENTER, while pressing the letter `q` goes back to the overview screen.
 
-## BONUS: Manipulate traffic in mitmproxy
+## FALLBACK: Running in proxy mode
+
+If everything above fails, we can try a simple configuration that depends on the client forcing the traffic to pass through the adversary. This is not realistic for an attack in the local network, but it captures an attacker in a privileged network position.
+
+Run `mitmproxy` in _proxy_ mode:
+
+```
+$ mitmproxy --showhost
+```
+
+Now manually configure the address of your host computer (port 8080) as the proxy in your mobile. All the HTTP traffic should now be captured by `mitmproxy` by definition.
+
+## BONUS: Manipulate traffic
 
 If you reached here we have a bonus round for you. For this last exercise, we will simplify our setup to remove ARP spoofing.
 Configure the gateway in your mobile device to point directly to the IP address of the VM and stop the execution of the `arpspoof` program.
