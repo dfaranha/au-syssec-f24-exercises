@@ -103,7 +103,7 @@ Run `mitmproxy` in _proxy_ mode:
 $ mitmproxy --showhost
 ```
 
-Now manually configure the address of your host computer (port 8080) as the proxy in your mobile. All the HTTP traffic should now be captured by `mitmproxy` by definition.
+Now manually configure the address of the machine running `mitmproxy` (port 8080) as the proxy in your mobile. All the HTTP traffic should now be captured by `mitmproxy` by definition.
 
 ## BONUS: Manipulate traffic
 
