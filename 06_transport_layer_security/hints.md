@@ -1,6 +1,10 @@
 This file contains hints for macOS and Windows.
 
-## Exercise 2: Restoring Access
+## Windows (native)
+
+The mitmproxy [website](https://docs.mitmproxy.org/stable/howto-transparent/) has some hints to configure routing on Windows. You should also take the opportunity to disable the firewall.
+
+## MacOS
 
 To forward traffic on macOS:
 
@@ -9,11 +13,7 @@ sudo sysctl -w net.inet.ip.forwarding=1
 sudo sysctl -w net.inet.ip.redirect=0
 ```
 
-The mitmproxy [website](https://docs.mitmproxy.org/stable/howto-transparent/) has some hints to configure routing on Windows. You should also take the opportunity to disable the firewall.
-
-## Exercise 3: Configure Firewall
-
-For this exercise on macOS, it is necessary to [disable System Integrity Protection (SIP)](https://developer.apple.com/documentation/security/disabling_and_enabling_system_integrity_protection). To do so, restart your laptop in recover mode by holding the power button down while powering up. Launch the terminal from the Utilities menu and run the command `csrutil disable`.
+For configure the firewall, it may be necessary to [disable System Integrity Protection (SIP)](https://developer.apple.com/documentation/security/disabling_and_enabling_system_integrity_protection). To do so, restart your laptop in recover mode by holding the power button down while powering up. Launch the terminal from the Utilities menu and run the command `csrutil disable`.
 
 To configure the firewall, create file `/etc/pf.anchors/redirection` and add the single line:
 ```
