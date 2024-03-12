@@ -3,9 +3,9 @@ import requests
 from Crypto.Cipher import PKCS1_OAEP
 from Crypto.PublicKey import RSA
 
-username = 'dfaranha'
-password = 'OMGbutterflies'
-secret = b'The abyss is looking back at you'
+username = '<redacted>'
+password = '<redacted>'
+secret = b'<redacted>'
 
 
 def login(session, base_url):

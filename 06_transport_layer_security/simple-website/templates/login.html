@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link href="{{ url_for('static', filename='signin.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<main class="form-signin">
+  <form method="post">
+    <div class="form-floating">
+      <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="username">
+      <label for="floatingInput">Username</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+  </form>
+</main>
+{% endblock %}
