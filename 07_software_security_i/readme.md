@@ -140,7 +140,7 @@ sudo sysctl -w fs.protected_symlinks=0
 Use the time windows between the calls to
 [`access`](https://man.archlinux.org/man/access.2) and
 [`open`](https://man.archlinux.org/man/open.2) to change the file that `toctou`
-is accessing.
+is accessing. You can also add a call to `sleep(1);` to help with debugging.
 
 </details>
 
@@ -320,7 +320,7 @@ int main() {
 The goal is still to execute the `win` function, but the program does not
 contain a call to `win` anymore.
 Hence, instead of overwriting a local variable, you need to overwrite the
-programs return address with the address of the function `win`.
+program's return address with the address of the function `win`.
 
 **Your tasks**:
 1. Find the address of the function `win` in the binary program.
@@ -388,3 +388,8 @@ If everything works, you should land in a newly spawned shell (the `cat` is
 necessary to prevent the shell from getting immediately closed again).
 Try executing commands.
 
+
+
+## Solutions
+
+See [here](solutions.md) for example solutions.
