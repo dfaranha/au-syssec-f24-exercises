@@ -72,4 +72,3 @@ read 160 bytes from standard input
 cat flag.txt
 flag{this_is_not_the_flag}
 ```
-Send me an email with the flag. :)
