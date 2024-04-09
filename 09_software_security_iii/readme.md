@@ -8,7 +8,7 @@ to find them.
 ## 1. Classes of Vulnerabilities
 
 During the course, we have seen many different kinds of vulnerabilities in software.
-For assignment 3, you will be asked to reproduce an exploit for one software vulnerability.
+For [assignment 3](https://github.com/dfaranha/au-syssec-f24-assignments/edit/main/software/readme.md), you will be asked to reproduce an exploit for a notorious software vulnerability.
 
 1. Think about what *classes of bugs* you can think of, e.g., what you have
    encountered in this course or in other context and collect them on a text file.
